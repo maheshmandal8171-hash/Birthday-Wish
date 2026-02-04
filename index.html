@@ -16,42 +16,36 @@ body{
   justify-content:center;
   align-items:center;
   flex-direction:column;
-}
-
-/* Card */
-.card{
-  background:white;
-  padding:30px 25px;
-  border-radius:20px;
-  max-width:420px;
-  width:90%;
   text-align:center;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  display:none;
-  animation:pop 1s ease;
 }
 
-@keyframes pop{
-  0%{transform:scale(0);opacity:0;}
-  100%{transform:scale(1);opacity:1;}
+/* First Screen */
+.screen1{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
-h1{color:#ff4b5c;}
-
-.message{
-  font-size:16px;
-  color:#555;
-  line-height:1.6;
+.screen1 h1{
+  font-size:40px;
+  color:#ff2e63;
+  animation:beat 1.5s infinite;
 }
 
-.from{
-  margin-top:15px;
-  color:#777;
-  font-weight:bold;
+@keyframes beat{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+.screen1 p{
+  font-size:18px;
+  color:#444;
 }
 
 /* Button */
-#playBtn{
+.btn{
+  margin-top:20px;
   padding:14px 26px;
   font-size:18px;
   background:#ff4b5c;
@@ -61,23 +55,56 @@ h1{color:#ff4b5c;}
   cursor:pointer;
 }
 
+/* Popup */
+.popup{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.6);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+
+.card{
+  background:white;
+  padding:30px 25px;
+  border-radius:20px;
+  max-width:420px;
+  width:90%;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  animation:pop 0.8s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(0);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+.card h2{color:#ff4b5c;}
+
+.message{
+  font-size:16px;
+  color:#555;
+  line-height:1.6;
+}
+
 /* Hearts */
 .heart{
   position:absolute;
   color:red;
   font-size:20px;
-  animation:floatUp 6s linear infinite;
+  animation:float 6s linear infinite;
 }
 
-@keyframes floatUp{
+@keyframes float{
   0%{bottom:-20px;opacity:1;}
   100%{bottom:110%;opacity:0;}
 }
 
 /* Video */
 iframe{
-  display:none;
-  margin-top:15px;
+  margin-top:20px;
   border-radius:15px;
   box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
@@ -86,13 +113,21 @@ iframe{
 
 <body>
 
-<button id="playBtn">Tap to Open ❤️🎵</button>
+<!-- Screen 1 -->
+<div class="screen1" id="screen1">
+  <h1>🎂 Happy Birthday Nandita 🎈❤️</h1>
+  <p>Someone has something special for you 💖✨</p>
+  <button class="btn" onclick="openPopup()">Open Your Surprise 💝</button>
+</div>
 
-<div class="card" id="card">
+<!-- Popup -->
+<div class="popup" id="popup">
 
-  <h1>Happy Birthday 🎈❤️</h1>
+  <div class="card">
 
-  <div class="message">
+    <h2>For My Beautiful Queen 👑❤️</h2>
+
+    <div class="message">
 
 <strong>Happy Birthday to the most beautiful woman in my life 💖🎈❤️</strong><br><br>
 
@@ -106,7 +141,7 @@ And our beautiful journey together is still waiting for us 😘💖<br><br>
 
 We will fulfill every dream side by side 💑❤️🎈<br><br>
 
-Yes it is true that my eyes are weak 😄💖,<br>
+You always say that my eyes are weak because I wear power glasses 😄💖,<br>
 but whenever I see your beautiful face, those glasses feel completely worth it,<br>
 because through them, I see the most perfect person in my life ❤️✨<br><br>
 
@@ -116,35 +151,32 @@ Thank you for making my life so special and meaningful 💕✨<br><br>
 
 Love you always and forever 💝❤️🎈
 
-  </div>
+    </div>
 
-  <div class="from">— From Mahesh (your Chasmis) 💌💖🎈</div>
+    <p style="margin-top:15px;color:#777;font-weight:bold;">
+      — From Mahesh 💌💖🎈
+    </p>
+
+    <!-- Video -->
+    <iframe
+      width="280"
+      height="500"
+      src="https://www.youtube.com/embed/jPgQ4gwGiag?autoplay=1&loop=1&playlist=jPgQ4gwGiag"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+
+  </div>
 
 </div>
 
-<!-- YouTube Shorts Video -->
-<iframe
-  id="video"
-  width="300"
-  height="530"
-  src="https://www.youtube.com/embed/jPgQ4gwGiag?autoplay=1&loop=1&playlist=jPgQ4gwGiag"
-  allow="autoplay; encrypted-media"
-  allowfullscreen>
-</iframe>
-
 <script>
-const btn = document.getElementById("playBtn");
-const card = document.getElementById("card");
-const video = document.getElementById("video");
-
-btn.onclick = ()=>{
-  btn.style.display="none";
-  card.style.display="block";
-  video.style.display="block";
+function openPopup(){
+  document.getElementById("screen1").style.display="none";
+  document.getElementById("popup").style.display="flex";
   startHearts();
-};
+}
 
-/* Hearts Animation */
 function startHearts(){
   setInterval(()=>{
     const h=document.createElement("div");
