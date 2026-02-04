@@ -14,15 +14,17 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  text-align:center;
   overflow:hidden;
+  text-align:center;
 }
 
-/* First Screen */
+/* Screen 1 */
+.screen1{
+  color:white;
+}
+
 .screen1 h1{
   font-size:36px;
-  color:white;
-  text-shadow:0 2px 10px rgba(0,0,0,0.2);
   animation:pulse 1.5s infinite;
 }
 
@@ -32,39 +34,50 @@ body{
   100%{transform:scale(1);}
 }
 
-.screen1 p{color:#fff;}
-
-.btn{
-  margin-top:20px;
-  padding:12px 26px;
-  background:linear-gradient(135deg,#ffd1dc,#fff);
-  color:#ff4b6e;
-  border:none;
-  border-radius:25px;
-  font-size:16px;
+.cake{
+  font-size:120px;
+  margin:20px 0;
   cursor:pointer;
-  font-weight:bold;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  transition:transform 0.3s;
+}
+
+.cake:hover{
+  transform:scale(1.1);
+}
+
+.knife{
+  font-size:60px;
+  animation:float 1.2s infinite alternate;
+}
+
+@keyframes float{
+  from{transform:translateY(0);}
+  to{transform:translateY(-10px);}
+}
+
+.tip{
+  font-size:16px;
+  margin-top:10px;
 }
 
 /* Popup */
 .popup{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.65);
+  background:rgba(0,0,0,0.6);
   display:none;
   justify-content:center;
   align-items:center;
 }
 
-/* Premium Card */
+/* Card */
 .card{
   background:
     linear-gradient(#fff,#fff) padding-box,
     linear-gradient(135deg,gold,#ff69b4) border-box;
   border:3px solid transparent;
   border-radius:26px;
-  padding:24px 22px;
+  padding:22px 22px;
   max-width:340px;
   width:90%;
   box-shadow:0 15px 35px rgba(0,0,0,0.3);
@@ -78,10 +91,8 @@ body{
 
 .card h2{
   color:#ff4b6e;
-  margin-bottom:8px;
 }
 
-/* Divider */
 .divider{
   width:60px;
   height:3px;
@@ -90,7 +101,6 @@ body{
   border-radius:5px;
 }
 
-/* Message */
 .message{
   font-size:14.8px;
   color:#444;
@@ -101,10 +111,10 @@ body{
 .heart{
   position:absolute;
   color:#ff2e63;
-  animation:float 6s linear infinite;
+  animation:floatUp 6s linear infinite;
 }
 
-@keyframes float{
+@keyframes floatUp{
   from{bottom:-20px;opacity:1;}
   to{bottom:110%;opacity:0;}
 }
@@ -124,9 +134,15 @@ iframe{
 
 <!-- Screen 1 -->
 <div class="screen1" id="screen1">
-  <h1>🎂 Happy Birthday to you Gadhu ❤️</h1>
-  <p>A little surprise made with love 💖</p>
-  <button class="btn" onclick="openCard()">Open Your Gift 💝</button>
+
+  <h1>🎂 Happy Birthday Gadhu ❤️</h1>
+
+  <div class="cake" onclick="cutCake()">🎂</div>
+
+  <div class="knife">🔪</div>
+
+  <div class="tip">Cut the cake to open your surprise 💝</div>
+
 </div>
 
 <!-- Popup -->
@@ -139,27 +155,25 @@ iframe{
 
     <div class="message">
 
-Happy Birthday to the most beautiful woman of my life 💖🎈❤️  
-Nandita jiii (Malkin) 👑💕  
+Happy Birthday to the most beautiful person of my life 💖🎈❤️  
+Nandita (My maalkin) 👑💕  
 
 Because of you, my life is full of happiness and love ✨❤️  
 You make my world more beautiful every day 💝  
 
-Our beautiful journey of together is still waiting 😘💖  
+Our beautiful journey together is still waiting 😘💖  
 We will fulfill our every dream side by side 💑❤️  
 
-
-      Yess my eyes are weak 😄,  
-but whenever I see your beauty, the specs👓 are feel worth it,  
+Yess my eyes are weak 😅,  
+but whenever I see your beauty, the specs 👓 are feel worth it,  
 because of them, I am able to see the most perfect and precious lady ❤️✨  
 
-
-      I am so lucky to have you 🥹💖  
+I am so lucky to have you 🥹💖  
 Thank you for making my life special 💕✨  
 
 Love you always and forever 💝❤️  
 
-— Your Mahesh/Chasmis🤓💌🎈
+— Your Maheshu🤓💌🎈
 
     </div>
 
@@ -175,7 +189,7 @@ Love you always and forever 💝❤️
 </div>
 
 <script>
-function openCard(){
+function cutCake(){
   document.getElementById("screen1").style.display="none";
   document.getElementById("popup").style.display="flex";
   startHearts();
