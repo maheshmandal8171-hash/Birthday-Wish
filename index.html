@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Birthday Wish 🎉</title>
-
+  <title>Happy Birthday Nandita 🎈❤️</title>
   <style>
     body {
       margin: 0;
@@ -15,9 +14,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      flex-direction: column;
     }
-
     .card {
       background: white;
       padding: 30px 25px;
@@ -26,58 +24,69 @@
       width: 90%;
       max-width: 400px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      animation: pop 1s ease;
     }
-
-    @keyframes pop {
-      0% { transform: scale(0.5); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
     h1 {
       color: #ff4b5c;
       margin-bottom: 10px;
     }
-
-    .name {
-      font-size: 22px;
-      font-weight: bold;
-      color: #333;
-    }
-
     .message {
       margin-top: 15px;
       font-size: 16px;
       color: #555;
       line-height: 1.5;
     }
-
     .from {
       margin-top: 20px;
       font-size: 14px;
       color: #777;
     }
+    #playButton {
+      margin-top: 30px;
+      padding: 12px 22px;
+      font-size: 18px;
+      color: white;
+      background: #ff4b5c;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    iframe {
+      display: none;
+    }
   </style>
 </head>
-
 <body>
 
-  <div class="card">
-    <h1>Happy Birthday 🎂🎉</h1>
-
-    <div class="name">
-      Dear Friend 💖
-    </div>
-
+  <div class="card" id="wishCard" style="display:none;">
+    <h1>Happy Birthday 🎈❤️</h1>
     <div class="message">
-      Wishing you a day filled with happiness, smiles, and lots of love.
-      May all your dreams come true ✨💝
-    </div>
-
-    <div class="from">
-      — From Mahesh 💌
+      <strong>Happy Birthday to the most beautiful woman in my life 💖🎈❤️</strong><br><br>
+      Nandita jiii (Malkin) 👑💕<br><br>
+      Because of you, my life is full of happiness and love ✨❤️<br><br>
+      You make my world more beautiful every single day 💝🎈<br><br>
+      And our beautiful journey together is still waiting for us 😘💖<br><br>
+      We will fulfill every dream side by side 💑❤️🎈<br><br>
+      I am so lucky to have you in my life 🥹💖🎈<br><br>
+      Thank you for making my life so special and meaningful 💕✨<br><br>
+      Love you always and forever 💝❤️🎈<br><br>
+      — From Mahesh 💌💖🎈
     </div>
   </div>
+
+  <button id="playButton">Tap to Play 🎵❤️ & See Your Wish</button>
+
+  <iframe id="bgMusic"
+    src="https://www.youtube.com/embed/jPgQ4gwGiag?autoplay=1&loop=1&playlist=jPgQ4gwGiag"
+    allow="autoplay"
+  ></iframe>
+
+  <script>
+    document.getElementById("playButton").onclick = function() {
+      document.getElementById("bgMusic").style.display = "block";
+      document.getElementById("wishCard").style.display = "block";
+      this.style.display = "none";
+    };
+  </script>
 
 </body>
 </html>
