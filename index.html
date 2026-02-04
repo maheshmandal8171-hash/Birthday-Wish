@@ -10,7 +10,7 @@ body{
   margin:0;
   height:100vh;
   font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  background:linear-gradient(135deg,#ff758c,#ffb6c1);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -22,68 +22,79 @@ body{
 .screen1 h1{
   font-size:36px;
   color:white;
+  text-shadow:0 2px 10px rgba(0,0,0,0.2);
   animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
   0%{transform:scale(1);}
-  50%{transform:scale(1.1);}
+  50%{transform:scale(1.08);}
   100%{transform:scale(1);}
 }
 
-.screen1 p{
-  color:#fff;
-}
+.screen1 p{color:#fff;}
 
 .btn{
   margin-top:20px;
-  padding:12px 24px;
-  background:#fff;
+  padding:12px 26px;
+  background:linear-gradient(135deg,#ffd1dc,#fff);
   color:#ff4b6e;
   border:none;
-  border-radius:20px;
+  border-radius:25px;
   font-size:16px;
   cursor:pointer;
   font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Popup */
 .popup{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.65);
   display:none;
   justify-content:center;
   align-items:center;
 }
 
-/* Card */
+/* Premium Card */
 .card{
-  background:linear-gradient(135deg,#ffffffcc,#ffe4ec);
-  backdrop-filter:blur(10px);
-  padding:22px 20px;
-  border-radius:22px;
+  background:
+    linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(135deg,gold,#ff69b4) border-box;
+  border:3px solid transparent;
+  border-radius:26px;
+  padding:24px 22px;
   max-width:340px;
   width:90%;
-  box-shadow:0 12px 30px rgba(0,0,0,0.25);
-  animation:pop 0.6s ease;
+  box-shadow:0 15px 35px rgba(0,0,0,0.3);
+  animation:pop 0.7s ease;
 }
 
 @keyframes pop{
-  from{transform:scale(0.7);opacity:0;}
+  from{transform:scale(0.8);opacity:0;}
   to{transform:scale(1);opacity:1;}
 }
 
 .card h2{
   color:#ff4b6e;
-  margin-bottom:10px;
+  margin-bottom:8px;
+}
+
+/* Divider */
+.divider{
+  width:60px;
+  height:3px;
+  background:linear-gradient(90deg,#ff69b4,gold);
+  margin:8px auto 12px;
+  border-radius:5px;
 }
 
 /* Message */
 .message{
-  font-size:14.5px;
+  font-size:14.8px;
   color:#444;
-  line-height:1.45;
+  line-height:1.5;
 }
 
 /* Hearts */
@@ -104,7 +115,7 @@ iframe{
   border-radius:14px;
   width:240px;
   height:420px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  box-shadow:0 5px 15px rgba(0,0,0,0.25);
 }
 </style>
 </head>
@@ -114,7 +125,7 @@ iframe{
 <!-- Screen 1 -->
 <div class="screen1" id="screen1">
   <h1>🎂 Happy Birthday to you Gadhu ❤️</h1>
-  <p>A special surprise is waiting 💖</p>
+  <p>A little surprise made with love 💖</p>
   <button class="btn" onclick="openCard()">Open Your Gift 💝</button>
 </div>
 
@@ -123,7 +134,8 @@ iframe{
 
   <div class="card">
 
-    <h2> HAPPY BIRTHDAY 🥳❤️</h2>
+    <h2>My Beautiful Queen 👑❤️</h2>
+    <div class="divider"></div>
 
     <div class="message">
 
@@ -133,19 +145,19 @@ Nandita jiii (Malkin) 👑💕
 Because of you, my life is full of happiness and love ✨❤️  
 You make my world more beautiful every day 💝  
 
-Our beautiful journey together is still waiting 😘💖  
-We will fulfill every dream side by side 💑❤️  
+Our beautiful journey of together is still waiting 😘💖  
+We will fulfill our every dream side by side 💑❤️  
 
-Yess it is true that my eyes are weak 😄,  
-but whenever I see your beautiful face, they feel worth it,  
-because through them, I see the most perfect person ❤️✨  
+Yess my eyes are weak 😄,  
+but whenever I see your beauti, the specs👓 are feel worth it,  
+because of them, I see the most perfect and precious person ❤️✨  
 
 I am so lucky to have you 🥹💖  
 Thank you for making my life special 💕✨  
 
 Love you always and forever 💝❤️  
 
-— Your Mahesh (chasmiss.. 🤓💌)
+— Your Mahesh/Chasmis🤓💌🎈
 
     </div>
 
