@@ -144,6 +144,10 @@ iframe{
   height:420px;
   box-shadow:0 8px 25px rgba(0,0,0,0.35);
 }
+  .heart{
+  color:red;
+  text-shadow:0 0 8px pink;
+  }
 </style>
 </head>
 
@@ -152,7 +156,7 @@ iframe{
 <!-- Screen1 -->
 <div class="screen1" id="screen1">
 
-  <h1>🎂 Happy Birthday Nandita ❤️</h1>
+  <h1>🎂 Happy Birthday Gadhuu ❤️</h1>
 
   <div class="cake" onclick="cutCake()">🎂</div>
 
@@ -215,8 +219,8 @@ function cutCake(){
 function startSparkles(){
   setInterval(()=>{
     const s=document.createElement("div");
-    s.className="sparkle";
-    s.innerHTML="✨";
+    s.className="sparkle heart";
+    s.innerHTML="❤️";
     s.style.left=Math.random()*100+"%";
     s.style.fontSize=(12+Math.random()*22)+"px";
     document.body.appendChild(s);
