@@ -1,1 +1,83 @@
-{"name":"Birthday Wish Web Page","type":"code/html","content":"\n<html lang="en">\n\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  Special Birthday Wish 🎉\n  \n    body {\n      margin: 0;\n      padding: 0;\n      height: 100vh;\n      font-family: 'Segoe UI', sans-serif;\n      background: linear-gradient(135deg, #ff9a9e, #fad0c4);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      overflow: hidden;\n    }\n\n    .card {\n      background: white;\n      padding: 30px 25px;\n      border-radius: 20px;\n      text-align: center;\n      width: 90%;\n      max-width: 400px;\n      box-shadow: 0 10px 25px rgba(0,0,0,0.2);\n      animation: pop 1s ease;\n    }\n\n    @keyframes pop {\n      0% { transform: scale(0.5); opacity: 0; }\n      100% { transform: scale(1); opacity: 1; }\n    }\n\n    h1 {\n      color: #ff4b5c;\n      margin-bottom: 10px;\n    }\n\n    .name {\n      font-size: 22px;\n      font-weight: bold;\n      color: #333;\n    }\n\n    .message {\n      margin-top: 15px;\n      font-size: 16px;\n      color: #555;\n      line-height: 1.5;\n    }\n\n    .from {\n      margin-top: 20px;\n      font-size: 14px;\n      color: #777;\n    }\n\n    .balloon {\n      position: absolute;\n      bottom: -100px;\n      width: 40px;\n      height: 50px;\n      border-radius: 50%;\n      animation: float 6s infinite ease-in
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Birthday Wish 🎉</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: pop 1s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      color: #ff4b5c;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .from {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Happy Birthday 🎂🎉</h1>
+
+    <div class="name">
+      Dear Friend 💖
+    </div>
+
+    <div class="message">
+      Wishing you a day filled with happiness, smiles, and lots of love.
+      May all your dreams come true ✨💝
+    </div>
+
+    <div class="from">
+      — From Mahesh 💌
+    </div>
+  </div>
+
+</body>
+</html>
