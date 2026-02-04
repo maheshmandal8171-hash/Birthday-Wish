@@ -1,92 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Nandita 🎈❤️</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .card {
-      background: white;
-      padding: 30px 25px;
-      border-radius: 20px;
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-    h1 {
-      color: #ff4b5c;
-      margin-bottom: 10px;
-    }
-    .message {
-      margin-top: 15px;
-      font-size: 16px;
-      color: #555;
-      line-height: 1.5;
-    }
-    .from {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #777;
-    }
-    #playButton {
-      margin-top: 30px;
-      padding: 12px 22px;
-      font-size: 18px;
-      color: white;
-      background: #ff4b5c;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    iframe {
-      display: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Nandita ❤️🎈</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+/* Card */
+.card{
+  background:white;
+  padding:30px 25px;
+  border-radius:20px;
+  max-width:420px;
+  width:90%;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  display:none;
+  animation:pop 1s ease;
+}
+
+@keyframes pop{
+  0%{transform:scale(0);opacity:0;}
+  100%{transform:scale(1);opacity:1;}
+}
+
+h1{
+  color:#ff4b5c;
+}
+
+.message{
+  font-size:16px;
+  color:#555;
+  line-height:1.6;
+}
+
+.from{
+  margin-top:15px;
+  color:#777;
+}
+
+/* Button */
+#playBtn{
+  padding:14px 26px;
+  font-size:18px;
+  background:#ff4b5c;
+  color:white;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Hearts */
+.heart{
+  position:absolute;
+  color:red;
+  font-size:20px;
+  animation:floatUp 6s linear infinite;
+}
+
+@keyframes floatUp{
+  0%{bottom:-20px;opacity:1;}
+  100%{bottom:110%;opacity:0;}
+}
+
+/* Balloons */
+.balloon{
+  position:absolute;
+  width:40px;
+  height:55px;
+  border-radius:50%;
+  animation:fly 8s linear infinite;
+}
+
+.balloon::after{
+  content:'';
+  width:2px;
+  height:30px;
+  background:#555;
+  position:absolute;
+  left:50%;
+  top:55px;
+}
+
+@keyframes fly{
+  0%{bottom:-80px;}
+  100%{bottom:120%;}
+}
+
+/* Confetti */
+.confetti{
+  position:absolute;
+  width:8px;
+  height:8px;
+  animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+  0%{top:-10px;opacity:1;}
+  100%{top:110%;opacity:0;}
+}
+
+audio{display:none;}
+</style>
 </head>
+
 <body>
 
-  <div class="card" id="wishCard" style="display:none;">
-    <h1>Happy Birthday 🎈❤️</h1>
-    <div class="message">
-      <strong>Happy Birthday to the most beautiful woman in my life 💖🎈❤️</strong><br><br>
-      Nandita jiii (Malkin) 👑💕<br><br>
-      Because of you, my life is full of happiness and love ✨❤️<br><br>
-      You make my world more beautiful every single day 💝🎈<br><br>
-      And our beautiful journey together is still waiting for us 😘💖<br><br>
-      We will fulfill every dream side by side 💑❤️🎈<br><br>
-      I am so lucky to have you in my life 🥹💖🎈<br><br>
-      Thank you for making my life so special and meaningful 💕✨<br><br>
-      Love you always and forever 💝❤️🎈<br><br>
-      — From Mahesh 💌💖🎈
-    </div>
+<button id="playBtn">Tap to Open ❤️🎵</button>
+
+<div class="card" id="card">
+  <h1>Happy Birthday 🎈❤️</h1>
+
+  <div class="message">
+    <strong>Happy Birthday to the most beautiful woman in my life 💖🎈❤️</strong><br><br>
+
+    Nandita jiii (Malkin) 👑💕<br><br>
+
+    Because of you, my life is full of happiness and love ✨❤️<br><br>
+
+    You make my world more beautiful every single day 💝🎈<br><br>
+
+    And our beautiful journey together is still waiting for us 😘💖<br><br>
+
+    We will fulfill every dream side by side 💑❤️🎈<br><br>
+
+    I am so lucky to have you in my life 🥹💖🎈<br><br>
+
+    Thank you for making my life so special and meaningful 💕✨<br><br>
+
+    Love you always and forever 💝❤️🎈
   </div>
 
-  <button id="playButton">Tap to Play 🎵❤️ & See Your Wish</button>
+  <div class="from">— From Mahesh 💌💖🎈</div>
+</div>
 
-  <iframe id="bgMusic"
-    src="https://www.youtube.com/embed/jPgQ4gwGiag?autoplay=1&loop=1&playlist=jPgQ4gwGiag"
-    allow="autoplay"
-  ></iframe>
+<!-- Background Music (Audio Only) -->
+<audio id="music" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
-  <script>
-    document.getElementById("playButton").onclick = function() {
-      document.getElementById("bgMusic").style.display = "block";
-      document.getElementById("wishCard").style.display = "block";
-      this.style.display = "none";
-    };
-  </script>
+<script>
+const btn = document.getElementById("playBtn");
+const card = document.getElementById("card");
+const music = document.getElementById("music");
+
+btn.onclick = ()=>{
+  btn.style.display="none";
+  card.style.display="block";
+  music.play();
+
+  startHearts();
+  startBalloons();
+  startConfetti();
+};
+
+/* Hearts */
+function startHearts(){
+  setInterval(()=>{
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"%";
+    h.style.fontSize=(15+Math.random()*25)+"px";
+    document.body.appendChild(h);
+
+    setTimeout(()=>h.remove(),6000);
+  },300);
+}
+
+/* Balloons */
+function startBalloons(){
+  setInterval(()=>{
+    const b=document.createElement("div");
+    b.className="balloon";
+    b.style.left=Math.random()*100+"%";
+    b.style.background=randomColor();
+    document.body.appendChild(b);
+
+    setTimeout(()=>b.remove(),8000);
+  },1500);
+}
+
+/* Confetti */
+function startConfetti(){
+  setInterval(()=>{
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"%";
+    c.style.background=randomColor();
+    document.body.appendChild(c);
+
+    setTimeout(()=>c.remove(),5000);
+  },200);
+}
+
+function randomColor(){
+  const colors=["#ff4b5c","#ffd700","#00e5ff","#ff9800","#8bc34a"];
+  return colors[Math.floor(Math.random()*colors.length)];
+}
+</script>
 
 </body>
 </html>
